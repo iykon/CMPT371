@@ -1,0 +1,31 @@
+4. 	lab1:
+	1: IP,TCP,HTTP
+	2: around 0.08second
+	3(get&ok.pcapng): The internet address of gaia.cs.umass.edu is 128.119.245.12. That of my computer is 192.168.0.104.
+	4(get&ok.pcapng): 
+
+	lab2:
+		part1:
+			1. My browser is running HTTP 1.1. The server is running HTTP 1.1.
+			2. Accept-language is en-us
+			3. The IP address of my computer is 192.168.0.104. That of the gaia.cs.umass.edu server is 128.119.245.12.
+			4. status code: 200.
+			5. last modified: Tue, 27 Oct 2015 05:01:01 GMT
+			6. 128 bytes.
+			7. No. All data are displayed.
+		part2:
+			8. No.
+			9. Yes. In the packet content window, I can see the whole content of the file. 
+			10. Yes. A date which is the last-modified date information in the last time when the computer request the same packet.
+			11. 304. No. From the content packet I can see only headers. On the other hand, the packet from the server has length of 307, which is the length of the header only.
+		part3:
+			12. 1. #22. 
+			13. #22.
+			14. Status code:200, response code:ok. 
+			15. 4.
+		part4:
+			16. 4. 
+			17. In parallel. The second GET request for pearson_logo.gif and the third GET request for cover_5th_ed.jpg are sent almost at the same time. And the response packet were received almost at the same time. If they are downloaded serially, one image may downloaded first, and after receiving that image packet, the browser will send the other GET request for the image. 
+		part5:
+			18. Status code 401, unauthorized.
+			19. Authorization:Basic field. 
