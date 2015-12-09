@@ -8,10 +8,12 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-char node[27];
+#define MAXNODES 27
+
+char node[MAXNODES];
 int n;
-int dist[27][27];
-int sdist[27];
+int dist[MAXNODES][MAXNODES];
+int sdist[MAXNODES];
 
 /*
  * function: LS
@@ -21,7 +23,7 @@ int sdist[27];
  * */
 void LS(int start){
 	int i, j, mind, minn;
-	int set[27];
+	int set[MAXNODES];
 
 	for(i = 0; i < n; ++i)
 		set[i] = 0;
@@ -66,25 +68,14 @@ int main(int argc, char **argv){
 	}
 	fp = fopen(fn, "r+");
 	fscanf(fp, "%d", &n);
-	//printf("%d\n",n);
 	for(i = 0; i < n; ++i){
 		fscanf(fp, "%d", &j);
 		fscanf(fp, "%c", node+i);
-		//printf("i:%c\n", node[i]);
 	}
-	//for(i = 0; i < n; ++i)
-	//	printf("%c ", node[i]);
-	//printf("\n");
 	for(i = 0; i < n; ++i)
 		for(j = 0; j < n; ++j)
 			fscanf(fp, "%d", dist[i]+j);
-	/*for(i = 0; i < n; ++i){
-		for(j = 0; j < n; ++j)
-			printf("%d ", dist[i][j]);
-		printf("\n");
-	}
-	*/
-	LS(0);
+	LS(0); // call Dijkstra's algorithm
 	for(i = 1; i < n; ++i)
 		printf("%c %d\n", node[i], sdist[i]);
 	return 0;
